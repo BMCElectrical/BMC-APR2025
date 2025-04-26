@@ -186,7 +186,7 @@ export default function ServicesPage() {
               >
                 <div className="relative h-48">
                   <Image
-                    src="/statement-lighting"
+                    src="/statement-lighting.jpg"
                     alt="Commercial Lighting"
                     fill
                     className="object-cover"
