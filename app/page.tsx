@@ -20,17 +20,17 @@ export default function Home() {
   const serviceAreas = [
     {
       title: "Bacchus Marsh & Surrounds",
-      image: "/public/Farm.jpg",
+      image: "/Farm.jpg",
       description: "Professional electrical services throughout Bacchus Marsh and nearby suburbs."
     },
     {
       title: "Ballan & Surrounds",
-      image: "public/Forest.jpg",
+      image: "/Forest.jpg",
       description: "Expert electrical solutions covering Ballan and surrounding communities."
     },
     {
       title: "Ballarat & Surrounds",
-      image: "public/Windmills.jpg",
+      image: "/Windmills.jpg",
       description: "Reliable residential and commercial electrical support in Ballarat & surrounds."
     }
   ];
