@@ -165,8 +165,8 @@ export default function ServicesPage() {
               >
                 <div className="relative h-48">
                   <Image
-                    src="https://images.unsplash.com/photo-1621996043924-e5e179695c26?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-                    alt="Project 1"
+                    src="/switchboard.jpg"
+                    alt="Residential Wiring"
                     fill
                     className="object-cover"
                   />
@@ -186,8 +186,8 @@ export default function ServicesPage() {
               >
                 <div className="relative h-48">
                   <Image
-                    src="https://images.unsplash.com/photo-1517245386804-bb43f653a96b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-                    alt="Project 2"
+                    src="/statement-lighting"
+                    alt="Commercial Lighting"
                     fill
                     className="object-cover"
                   />
@@ -207,14 +207,14 @@ export default function ServicesPage() {
               >
                 <div className="relative h-48">
                   <Image
-                    src="https://images.unsplash.com/photo-1542751371-adc38f48795e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-                    alt="Project 3"
+                    src="/residential.jpg"
+                    alt="Statement Lighting"
                     fill
                     className="object-cover"
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">Industrial Power Systems</h3>
+                  <h3 className="text-xl font-semibold mb-3">Statement Lighting</h3>
                   <p className="text-gray-600">Installation of a robust power system for a manufacturing plant.</p>
                 </div>
               </motion.div>
