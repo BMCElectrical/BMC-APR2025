@@ -46,7 +46,7 @@ export default function PrivacyPolicy() {
               If you have any questions about this Privacy Policy, please contact us:
             </p>
             <ul className="list-disc pl-6 mt-4 text-gray-600">
-              <li>By email: privacy@example.com</li>
+              <li>By email: admin@bmcelectricalcontractors.com.au</li>
               <li>By visiting our contact page</li>
             </ul>
           </section>
