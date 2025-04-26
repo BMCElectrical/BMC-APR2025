@@ -215,7 +215,7 @@ export default function ServicesPage() {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Statement Lighting</h3>
-                  <p className="text-gray-600">Installation of a robust power system for a manufacturing plant.</p>
+                  <p className="text-gray-600">Effective lighting solutions for your home, office or business.</p>
                 </div>
               </motion.div>
             </div>
