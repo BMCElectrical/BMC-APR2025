@@ -151,4 +151,135 @@ export default function Home() {
         </section>
         
         {/* Areas We Service Section */}
-        <
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center mb-12">Areas We Service</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {serviceAreas.map((area, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-white rounded-xl shadow-lg overflow-hidden"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 }}
+                >
+                  <div className="relative h-48">
+                    <Image
+                      src={area.image}
+                      alt={`Professional electrical services in ${area.title}`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      priority={index === 0}
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold mb-3">{area.title}</h3>
+                    <p className="text-gray-600">{area.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+            {/* Visually hidden service areas list for SEO and accessibility */}
+            <div className="sr-only" aria-hidden="false">
+              <h3>Complete List of Service Areas</h3>
+              <ul>
+                <li>Bacchus Marsh & Surrounds</li>
+                <li>Bacchus Marsh</li>
+                <li>Darley</li>
+                <li>Maddingley</li>
+                <li>Coimadai</li>
+                <li>Pentland Hills</li>
+                <li>Toolern Vale</li>
+                <li>Ballan & Surrounds</li>
+                <li>Ballan</li>
+                <li>Greendale</li>
+                <li>Myrniong</li>
+                <li>Gordon</li>
+                <li>Wallace</li>
+                <li>Bungaree</li>
+                <li>Ballarat & Surrounds</li>
+                <li>Ballarat</li>
+                <li>Warrenheip</li>
+                <li>Wendouree</li>
+                <li>Sebastopol</li>
+                <li>Delacombe</li>
+                <li>Lucas</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <motion.div
+                className="bg-white p-6 rounded-xl shadow-lg"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <i key={i} className="fas fa-star" aria-hidden="true"></i>
+                    ))}
+                  </div>
+                  <span className="sr-only">5 out of 5 stars</span>
+                </div>
+                <p className="text-gray-600 mb-4">
+                  &rdquo;BMC Electrical Contractors were great! They gave a quote, prompt arrival, efficient and pleasant to deal with whilst on site. Highly recommend this company.&rdquo;
+                </p>
+                <div className="font-semibold">- John M.</div>
+              </motion.div>
+              <motion.div
+                className="bg-white p-6 rounded-xl shadow-lg"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <i key={i} className="fas fa-star" aria-hidden="true"></i>
+                    ))}
+                  </div>
+                  <span className="sr-only">5 out of 5 stars</span>
+                </div>
+                <p className="text-gray-600 mb-4">
+                  &rdquo;Very knowledgeable and friendly service. Brandon really knows his stuff.&rdquo;
+                </p>
+                <div className="font-semibold">- Marno B.</div>
+              </motion.div>
+              <motion.div
+                className="bg-white p-6 rounded-xl shadow-lg"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+              >
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <i key={i} className="fas fa-star" aria-hidden="true"></i>
+                    ))}
+                  </div>
+                  <span className="sr-only">5 out of 5 stars</span>
+                </div>
+                <p className="text-gray-600 mb-4">
+                  &rdquo;A huge thankyou to Brandon once again he&apos;s done a ton of work at our place in Kurunjang very honest and quality work highly recommended!&rdquo;
+                </p>
+                <div className="font-semibold">- Jase M.</div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}
