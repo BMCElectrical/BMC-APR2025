@@ -21,14 +21,17 @@ export default function Home() {
     {
       title: "Bacchus Marsh & Surrounds",
       image: "https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=1200&h=800&q=80",
+      description: "Professional electrical services throughout Bacchus Marsh and nearby suburbs."
     },
     {
       title: "Ballan & Surrounds",
       image: "https://images.unsplash.com/photo-1465447142348-e9952c393450?w=1200&h=800&q=80",
+      description: "Expert electrical solutions covering Ballan and surrounding communities."
     },
     {
       title: "Ballarat & Surrounds",
       image: "https://images.unsplash.com/photo-1514214246283-d427a95c5d2f?w=1200&h=800&q=80",
+      description: "Reliable residential and commercial electrical support in Ballarat & surrounds."
     }
   ];
 
@@ -182,32 +185,7 @@ export default function Home() {
               ))}
             </div>
             {/* Visually hidden service areas list for SEO and accessibility */}
-            <div className="sr-only" aria-hidden="false">
-              <h3>Complete List of Service Areas</h3>
-              <ul>
-                <li>Bacchus Marsh & Surrounds</li>
-                <li>Bacchus Marsh</li>
-                <li>Darley</li>
-                <li>Maddingley</li>
-                <li>Coimadai</li>
-                <li>Pentland Hills</li>
-                <li>Toolern Vale</li>
-                <li>Ballan & Surrounds</li>
-                <li>Ballan</li>
-                <li>Greendale</li>
-                <li>Myrniong</li>
-                <li>Gordon</li>
-                <li>Wallace</li>
-                <li>Bungaree</li>
-                <li>Ballarat & Surrounds</li>
-                <li>Ballarat</li>
-                <li>Warrenheip</li>
-                <li>Wendouree</li>
-                <li>Sebastopol</li>
-                <li>Delacombe</li>
-                <li>Lucas</li>
-              </ul>
-            </div>
+            <div className="sr-only" aria-hidden="false">…</div>
           </div>
         </section>
 
