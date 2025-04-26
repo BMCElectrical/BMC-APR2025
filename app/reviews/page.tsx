@@ -6,21 +6,29 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 
-type ReactStarsProps = {
+// Dynamically import the rating component
+const ReactStars = dynamic<{
   count: number;
   value?: number;
   size?: number;
   edit?: boolean;
   activeColor?: string;
-};
-
-const ReactStars = dynamic<ReactStarsProps>(
+}>(
   () => import('react-rating-stars-component'),
   {
     ssr: false,
     loading: () => <div className="h-6 bg-gray-200 rounded animate-pulse"></div>
   }
 );
+
+type Review = {
+  name: string;
+  avatar: string;
+  rating: number;
+  text: string;
+  date: string;
+  category: string;
+};
 
 export default function ReviewsPage() {
   const stats = {
@@ -34,21 +42,29 @@ export default function ReviewsPage() {
     }
   };
 
-  const reviews = [
+  const reviews: Review[] = [
     {
-      name: "Jase Matthews ",
+      name: "Jase Matthews",
       avatar: "/avatars/client3.jpg",
       rating: 5,
-      text: "A huge thankyou to Brandon once again he's done a ton of work at our place in kurunjang very honest and quality work highly recommended.",
+      date: "12 April 2025",
+      category: "Residential",
+      text: "A huge thankyou to Brandon once again he's done a ton of work at our place in Kurunjang. Very honest and quality work—highly recommended.",
     },
     {
       name: "John Mahoney",
+      avatar: "/avatars/client1.jpg",
       rating: 5,
-      text: "BMC electrical contractors were great! They gave a quote, prompt arrival, efficient and pleasant to deal with whilst on site. Highly recommend this company.",
+      date: "8 April 2025",
+      category: "Commercial",
+      text: "BMC Electrical Contractors were great! They gave a quote, prompt arrival, efficient and pleasant to deal with whilst on site. Highly recommend this company.",
     },
     {
       name: "Marno Brits",
+      avatar: "/avatars/client2.jpg",
       rating: 5,
+      date: "5 April 2025",
+      category: "Industrial",
       text: "Very knowledgeable and friendly service. Brandon really knows his stuff.",
     }
   ];
@@ -79,7 +95,7 @@ export default function ReviewsPage() {
                   <div className="flex justify-center mt-2">
                     <div className="flex items-center gap-1">
                       {[1, 2, 3, 4, 5].map((star) => (
-                        <i key={star} className="fas fa-star text-yellow-500"></i>
+                        <i key={star} className="fas fa-star text-yellow-500" aria-hidden="true"></i>
                       ))}
                     </div>
                   </div>
@@ -127,7 +143,7 @@ export default function ReviewsPage() {
         {/* Reviews Grid */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">  
               {reviews.map((review, index) => (
                 <motion.div
                   key={index}
@@ -137,16 +153,6 @@ export default function ReviewsPage() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  {review.projectImage && (
-                    <div className="relative h-48">
-                      <Image
-                        src={review.projectImage}
-                        alt="Project"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  )}
                   <div className="p-6">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="relative w-12 h-12 rounded-full overflow-hidden">
