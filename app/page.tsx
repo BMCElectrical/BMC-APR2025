@@ -74,10 +74,7 @@ export default function Home() {
       
       <main className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section
-          ref={targetRef}
-          className="relative min-h-[90vh] flex items-center justify-center pt-20 bg-gray-50"
-        >
+        <section ref={targetRef} className="relative min-h-[90vh] flex items-center justify-center pt-20 bg-gray-50">
           <motion.div
             style={{ y, opacity }}
             className="absolute inset-0 pointer-events-none"
@@ -86,11 +83,15 @@ export default function Home() {
           </motion.div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-3xl mx-auto">
-              {/* Static H1, no animation */}
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">
+              <motion.h1
+                className="text-5xl md:text-6xl font-bold mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
                 Your Trusted Electrical
                 <span className="block text-green-700">Service Partner</span>
-              </h1>
+              </motion.h1>
               <p className="text-xl text-gray-600 mb-8">
                 Professional electrical services with 24/7 emergency support. 
                 Licensed experts ready to solve any electrical challenge.
@@ -183,6 +184,7 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
+            {/* Visually hidden service areas list for SEO and accessibility */}
             <div className="sr-only" aria-hidden="false">…</div>
           </div>
         </section>
@@ -211,7 +213,46 @@ export default function Home() {
                 </p>
                 <div className="font-semibold">- John M.</div>
               </motion.div>
-              {/* …other testimonials */}
+              <motion.div
+                className="bg-white p-6 rounded-xl shadow-lg"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <i key={i} className="fas fa-star" aria-hidden="true"></i>
+                    ))}
+                  </div>
+                  <span className="sr-only">5 out of 5 stars</span>
+                </div>
+                <p className="text-gray-600 mb-4">
+                  &rdquo;Very knowledgeable and friendly service. Brandon really knows his stuff.&rdquo;
+                </p>
+                <div className="font-semibold">- Marno B.</div>
+              </motion.div>
+              <motion.div
+                className="bg-white p-6 rounded-xl shadow-lg"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+              >
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <i key={i} className="fas fa-star" aria-hidden="true"></i>
+                    ))}
+                  </div>
+                  <span className="sr-only">5 out of 5 stars</span>
+                </div>
+                <p className="text-gray-600 mb-4">
+                  &rdquo;A huge thankyou to Brandon once again he&apos;s done a ton of work at our place in Kurunjang very honest and quality work highly recommended!&rdquo;
+                </p>
+                <div className="font-semibold">- Jase M.</div>
+              </motion.div>
             </div>
           </div>
         </section>
