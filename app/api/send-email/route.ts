@@ -1,7 +1,11 @@
-import { NextResponse } from 'next/server';
-import { Resend } from 'resend';
+// app/api/send-email/route.ts
+'use server';
 
-// Initialize Resend with environment variable
+import { NextResponse } from 'next/server';
+// Import the Node-only entrypoint to avoid any react-dom/server pulls
+import { Resend } from 'resend/dist/node/index.js';
+
+// Initialize Resend with env var
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
@@ -24,6 +28,7 @@ export async function POST(request: Request) {
       );
     }
 
+    // Send mail via Resend
     await resend.emails.send({
       from: 'BMC Electrical <noreply@bmcelectricalcontractors.com.au>',
       to: 'admin@bmcelectricalcontractors.com.au',
