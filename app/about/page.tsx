@@ -66,7 +66,7 @@ export default function AboutPage() {
               </div>
               <div className="relative h-[400px]">
                 <Image
-                  src="/about-bmc.png"
+                  src="public/Brandon-about.jpg"
                   alt="Brandon from BMC Electrical"
                   fill
                   className="object-cover rounded-lg"
