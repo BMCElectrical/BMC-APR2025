@@ -39,10 +39,10 @@ export default function ServicesPage() {
       description: "Heavy-duty electrical solutions for industrial facilities",
       icon: "fas fa-industry",
       features: [
-        "Industrial power distribution",
+        "Statement Lighting",
         "Machine installation and wiring",
         "Control system installation",
-        "High voltage services",
+        "Automation",
         "Preventive maintenance",
         "Safety compliance"
       ]
