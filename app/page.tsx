@@ -1,5 +1,6 @@
 'use client';
 
+import Head from 'next/head';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -11,67 +12,97 @@ export default function Home() {
   const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ["start start", "end start"]
+    offset: ['start start', 'end start'],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   const serviceAreas = [
     {
-      title: "Bacchus Marsh & Surrounds",
-      image: "/Farm.jpg",
-      description: "Professional electrical services throughout Bacchus Marsh and nearby suburbs."
+      title: 'Bacchus Marsh & Surrounds',
+      image: '/Farm.jpg',
+      description: 'Professional electrical services throughout Bacchus Marsh and nearby suburbs.',
     },
     {
-      title: "Ballan & Surrounds",
-      image: "/Forest.jpg",
-      description: "Expert electrical solutions covering Ballan and surrounding communities."
+      title: 'Ballan & Surrounds',
+      image: '/Forest.jpg',
+      description: 'Expert electrical solutions covering Ballan and surrounding communities.',
     },
     {
-      title: "Ballarat & Surrounds",
-      image: "/Windmills.jpg",
-      description: "Reliable residential and commercial electrical support in Ballarat & surrounds."
-    }
+      title: 'Ballarat & Surrounds',
+      image: '/Windmills.jpg',
+      description: 'Reliable residential and commercial electrical support in Ballarat & surrounds.',
+    },
   ];
 
   const services = [
     {
-      title: "Residential Services",
-      description: "Expert electrical solutions for homes, from repairs to complete rewiring. Licensed professionals ensuring your family's safety and comfort.",
-      icon: "fas fa-home",
-      benefits: [
-        "24/7 emergency service",
-        "Licensed & insured experts",
-        "Same-day appointments"
-      ]
+      title: 'Residential Services',
+      description:
+        "Expert electrical solutions for homes, from repairs to complete rewiring. Licensed professionals ensuring your family's safety and comfort.",
+      icon: 'fas fa-home',
+      benefits: ['24/7 emergency service', 'Licensed & insured experts', 'Same-day appointments'],
     },
     {
-      title: "Commercial Services",
-      description: "Comprehensive electrical services for businesses, minimising downtime and maximising efficiency. Trusted by leading companies.",
-      icon: "fas fa-building",
-      benefits: [
-        "Energy-efficient solutions",
-        "Preventive maintenance",
-        "Code compliance"
-      ]
+      title: 'Commercial Services',
+      description:
+        'Comprehensive electrical services for businesses, minimising downtime and maximising efficiency. Trusted by leading companies.',
+      icon: 'fas fa-building',
+      benefits: ['Energy-efficient solutions', 'Preventive maintenance', 'Code compliance'],
     },
     {
-      title: "Industrial Services",
-      description: "Heavy-duty electrical solutions for manufacturing and industrial facilities. Keeping your operations running smoothly.",
-      icon: "fas fa-industry",
-      benefits: [
-        "Custom installations",
-        "Safety compliance",
-        "24/7 support"
-      ]
-    }
+      title: 'Industrial Services',
+      description:
+        'Heavy-duty electrical solutions for manufacturing and industrial facilities. Keeping your operations running smoothly.',
+      icon: 'fas fa-industry',
+      benefits: ['Custom installations', 'Safety compliance', '24/7 support'],
+    },
   ];
 
   return (
     <>
+      <Head>
+        {/* Inline critical above-the-fold CSS */}
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              body { margin: 0; background-color: #fff; }
+              .min-h-\\[90vh\\] { min-height: 90vh; }
+              .flex { display: flex; }
+              .items-center { align-items: center; }
+              .justify-center { justify-content: center; }
+              .pt-20 { padding-top: 5rem; }
+              .bg-gray-50 { background-color: #F9FAFB; }
+              .text-5xl { font-size: 3rem; line-height: 1; }
+              .md\\:text-6xl { font-size: 3.75rem; }
+              .font-bold { font-weight: 700; }
+              .mb-6 { margin-bottom: 1.5rem; }
+              .text-green-700 { color: #047857; }
+              .text-xl { font-size: 1.25rem; }
+              .text-gray-600 { color: #4B5563; }
+              .mb-8 { margin-bottom: 2rem; }
+              .btn-primary { background-color: #047857; color: #fff; }
+              .btn-primary:hover { background-color: #065F46; }
+              .btn-secondary { border: 2px solid #047857; color: #047857; }
+              .btn-secondary:hover { background-color: #F0FDF4; }
+            `,
+          }}
+        />
+        {/* Preload and async-load remaining CSS */}
+        <link
+          rel="preload"
+          href="/css/all.min.css"
+          as="style"
+          onLoad="this.onload=null;this.rel='stylesheet'"
+        />
+        <noscript>
+          <link rel="stylesheet" href="/css/all.min.css" />
+        </noscript>
+      </Head>
+
       <Navbar />
-      
+
       <main className="min-h-screen bg-white">
         {/* Hero Section */}
         <section
@@ -86,26 +117,25 @@ export default function Home() {
           </motion.div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-3xl mx-auto">
-              {/* Static H1, no animation */}
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
                 Your Trusted Electrical
                 <span className="block text-green-700">Service Partner</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8">
-                Professional electrical services with 24/7 emergency support. 
+                Professional electrical services with 24/7 emergency support.
                 Licensed experts ready to solve any electrical challenge.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="tel:0432974722"
-                  className="btn-primary text-lg px-12 py-4 rounded-full inline-flex items-center justify-center gap-2 bg-green-700 text-white hover:bg-green-800"
+                  className="btn-primary text-lg px-12 py-4 rounded-full inline-flex items-center justify-center gap-2"
                 >
                   Get Emergency Service
                   <i className="fas fa-bolt"></i>
                 </Link>
                 <Link
                   href="/contact"
-                  className="btn-secondary text-lg px-12 py-4 rounded-full inline-flex items-center justify-center gap-2 border-2 border-green-700 text-green-700 hover:bg-green-50"
+                  className="btn-secondary text-lg px-12 py-4 rounded-full inline-flex items-center justify-center gap-2"
                 >
                   Get a Quote
                 </Link>
@@ -151,7 +181,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        
+
         {/* Areas We Service Section */}
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -207,7 +237,7 @@ export default function Home() {
                   <span className="sr-only">5 out of 5 stars</span>
                 </div>
                 <p className="text-gray-600 mb-4">
-                  &rdquo;BMC Electrical Contractors were great! They gave a quote, prompt arrival, efficient and pleasant to deal with whilst on site. Highly recommend this company.&rdquo;
+                  „BMC Electrical Contractors were great! They gave a quote, prompt arrival, efficient and pleasant to deal with whilst on site. Highly recommend this company.”
                 </p>
                 <div className="font-semibold">- John M.</div>
               </motion.div>
@@ -216,6 +246,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+
       <Footer />
     </>
   );
